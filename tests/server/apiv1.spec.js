@@ -82,6 +82,7 @@ describe('Get Weather', function() {
 
     const body = {
       cod: 200,
+      name: 'Hamilton',
       weather: [
         {
           main: 'cold'
