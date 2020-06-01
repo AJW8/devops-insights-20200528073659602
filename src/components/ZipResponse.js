@@ -22,8 +22,8 @@ function ZipResponse(props) {
             <div className="col-sm-8">
                 <script>
                     function setMarker(){
-                    	var lat = window.latitude;
-                    	var lng = window.longitude;
+                    	const lat = window.latitude;
+                    	const lng = window.longitude;
                         window.marker = new google.maps.Marker({
                             position: { lat, lng },
                             map: window.map
