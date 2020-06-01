@@ -1,5 +1,4 @@
 import React from 'react';
-import 'public/index.html';
 
 function ZipResponse(props) {
 
