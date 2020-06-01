@@ -17,9 +17,9 @@ function ZipResponse(props) {
     }
 
     if(props.responseData.cod === 200) {
-    	var latitude = props.responseData.coord.lat;
-	var longitude = props.responseData.coord.lng;
-	marker = new google.maps.Marker({
+    	var latitude = responseData.geometry.location.lat();
+	var longitude = responseData.geometry.location.lng();
+	var marker = new google.maps.Marker({
 	  position: { latitude, longitude },
 	  map: map
 	});
