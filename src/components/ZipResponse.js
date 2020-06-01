@@ -1,12 +1,5 @@
 import React from 'react';
 
-function setMarker(){
-  marker = new google.maps.Marker({
-    position: { window.latitude, window.longitude },
-    map: window.map
-  });
-}
-
 function ZipResponse(props) {
 
     if(props.responseData === null || props.responseData === '') {
@@ -23,11 +16,12 @@ function ZipResponse(props) {
     }
 
     if(props.responseData.cod === 200) {
-    	window.latitude = props.responseData.coord.lat;
-	window.longitude = props.responseData.coord.lng;
-	let script = document.createElement('script');
-        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCQmERm45qEbVVCNAgU97vfKYK09QmaiZ4&callback=setMarker";
-        document.head.append(script);
+    	var latitude = props.responseData.coord.lat;
+	var longitude = props.responseData.coord.lng;
+	marker = new google.maps.Marker({
+	  position: { latitude, longitude },
+	  map: map
+	});
         return (
             <div className="col-sm-8">
                 <table className="table table-info table-hover">
