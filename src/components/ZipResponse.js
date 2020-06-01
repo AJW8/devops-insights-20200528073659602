@@ -16,8 +16,19 @@ function ZipResponse(props) {
     }
 
     if(props.responseData.cod === 200) {
+    	var latitude = props.responseData.coord.lat;
+        var longitude = props.responseData.coord.lng;
         return (
             <div className="col-sm-8">
+                <script>
+                    function setMarker(){
+                        window.marker = new google.maps.Marker({
+                            position: { latitude, longitude },
+                            map: window.map
+                        });
+                    }
+                </script>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQmERm45qEbVVCNAgU97vfKYK09QmaiZ4&callback=setMarker"></script>
                 <table className="table table-info table-hover">
                     <tbody>
                         <tr>
