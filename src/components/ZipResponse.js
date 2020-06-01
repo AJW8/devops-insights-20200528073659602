@@ -16,16 +16,14 @@ function ZipResponse(props) {
     }
 
     if(props.responseData.cod === 200) {
-    	window.latitude = props.responseData.coord.lat;
-        window.longitude = props.responseData.coord.lng;
+    	var latitude = props.responseData.coord.lat;
+        var longitude = props.responseData.coord.lng;
         return (
             <div className="col-sm-8">
                 <script>
                     function setMarker(){
-                    	var lat = window.latitude;
-                    	var lng = window.longitude;
                         window.marker = new google.maps.Marker({
-                            position: { lat, lng },
+                            position: { latitude, longitude },
                             map: window.map
                         });
                     }
