@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.css';
 
 function ZipResponse(props) {
 
@@ -17,12 +16,6 @@ function ZipResponse(props) {
     }
 
     if(props.responseData.cod === 200) {
-    	var latitude = responseData.geometry.location.lat();
-	var longitude = responseData.geometry.location.lng();
-	var marker = new google.maps.Marker({
-	  position: { latitude, longitude },
-	  map: map
-	});
         return (
             <div className="col-sm-8">
                 <table className="table table-info table-hover">
