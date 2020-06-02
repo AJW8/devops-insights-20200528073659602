@@ -23,11 +23,29 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet"/>
+    <style>
+      #map{
+        width = 600px;
+        height = 1000px;
+      }
+    </style>
     <title>Demo DOI</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <div id="map"></div>
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoiYWFyb25qdzQiLCJhIjoiY2theDV6anZqMDNxdDJwb2plbXVyamh4diJ9.gFNfJ7f8SWVtKhnkqktB_Q';
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [174.885971, -40.900557],
+        zoom: 7
+      });
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
